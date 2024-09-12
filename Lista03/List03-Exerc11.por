@@ -1,14 +1,12 @@
 programa {
   funcao inicio() {
-    cadeia nome
+    cadeia nome,resp
     inteiro idade, i, idadeF
     caracter sexo
 
-    i = 0 
     idadeF = 0
     
     faca{
-      i++
      escreva("\n Qual o seu nome?\n")
      leia(nome)
      escreva("Qual a sua idade?\n")
@@ -24,7 +22,14 @@ programa {
      se(sexo == "F"){
       idadeF = idadeF + idade
      }
-     }enquanto(i<8)
+     escreva("Deseja continuar?\n")
+     leia(resp)
+     se(resp != "S" e resp != "s" e resp != "N" e resp !="n"){
+      escreva("Escolha inválida")
+      retorne
+     }
+
+     }enquanto(resp == "s" ou resp == "S")
     escreva("A media da idade do sexo feminino e ",idadeF / i)
   }
 }
